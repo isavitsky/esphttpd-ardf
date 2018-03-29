@@ -1,0 +1,81 @@
+/**
+ * Tabs object.
+ *
+ * 1. Tables (kinda) for layout!
+ * 2. This is the magic bit; make all children occupy equal width.
+ * 3. Required to make the tabs fill their container.
+ * 4. Make each tab pack up horizontally.
+ * 5. Ensure the hit area covers the whole tab.
+ */
+.tabs {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+    display: table; /* [1] */
+    table-layout: fixed; /* [2] */
+    width: 100%; /* [3] */
+}
+
+ul.tabs li.selected a, ul.tabs li.selected a:hover
+{
+    position: relative;
+    top: 0px;
+    font-weight:bold;
+    background: blue;
+    border: 1px solid #B7B7B7;
+    border-bottom-color: white;
+}
+
+.tab_li {
+    display: table-cell; /* [4] */
+}
+
+.tab_a {
+    display: block; /* [5] */
+}
+
+
+/**
+ * Primary nav. Extends `.tabs`.
+ *
+ * 1. Stop tabs’ corners leaking out beyond our 4px round.
+ */
+.nav {
+    text-align: center;
+    border-radius: 4px;
+    overflow: hidden; /* [1] */
+}
+
+.nav a {
+    padding: 1em;
+    background-color:gray;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size:50px;
+    font-size:5vw;
+}
+
+.nav a:hover {
+    background-color: #A3C43B;
+}
+
+.wh100 {
+   width:100%;
+   height:100%;
+   font-size:100px;
+   font-size:7vw;
+}
+/*
+table.m td {
+   height:150px;
+   background-color:#fefcae;
+   font-size:60px;
+   font-size:8vw;
+}
+*/
+
+html {
+    font-size: 60px;
+    font-size: 7vw;
+}

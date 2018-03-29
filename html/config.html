@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fox Setup</title>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="CONTENT-LANGUAGE" CONTENT="uk-UA">
+    <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-8">
+    <META HTTP-EQUIV="EXPIRES" CONTENT="Thu, 01 Jan 1970 00:00:00 GMT">
+    <script src="tabcontent.js" type="text/javascript"></script>
+    <script src="scripts_cfg.js" type="text/javascript"></script>
+
+    <link href="tabcontent.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div style="width: 100%; margin: 0 auto; padding: 12px 0 40px;">
+        <ul class="tabs nav">
+            <li class="tab_li"><a href="#view1" class="tab_a">Налашт.</a></li>
+            <li class="tab_li"><a href="#view2" class="tab_a">Експерт</a></li>
+            <li class="tab_li"><a href="#view3" class="tab_a">Інфо</a></li>
+        </ul>
+        <div class="tabcontents">
+            <div id="view1">
+            <div><hr></div>
+
+            <form id="form_basic" width="100%">
+               <table width="100%" class="m" border="1">
+                  <tr>
+                     <td width="33%">Позивний</td>
+                     <td>
+                        <select id="foxid" class="wh100">
+                           <option value="-1" selected disabled></option>
+                           <option value="0">MO</option>
+                           <option value="1">1 - MOE</option>
+                           <option value="2">2 - MOI</option>
+                           <option value="3">3 - MOS</option>
+                           <option value="4">4 - MOH</option>
+                           <option value="5">5 - MO5</option>
+                           <option value="6">S</option>
+                           <option value="9">F1 - MOE(F)</option>
+                           <option value="10">F2 - MOI(F)</option>
+                           <option value="11">F3 - MOS(F)</option>
+                           <option value="12">F4 - MOH(F)</option>
+                           <option value="13">F5 - MO5(F)</option>
+                        </select>
+                  </tr>
+                  <tr>
+                     <td>К-ть лис</td>
+                     <td>
+                        <select id="numfoxes" class="wh100">
+                           <option value="-1" selected disabled></option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                        <select>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Сеанс, с</td>
+                     <td>
+                        <select id="seancelen" class="wh100">
+                           <option value="-1" selected disabled></option>
+                           <option value="12">12</option>
+                           <option value="30">30</option>
+                           <option value="60">60</option>
+                           <option value="120">120</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Частота, кГц</td>
+                     <td>
+                        <select id="txfreq" class="wh100">
+                           <option value="-1" selected disabled></option>
+                           <option value="3510">3510</option>
+                           <option value="3540">3540</option>
+                           <option value="3570">3570</option>
+                           <option value="3600">3600</option>
+                           <option value="3579">3579</option>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">
+                        <input type="button" class="wh100"
+                           onclick="submitFormBasic('/fox/cfg_save');" value="Записати">
+                     </td>
+                  </tr>
+               </table>
+            </form>
+            </div>
+
+            <div id="view2">
+            <div><hr></div>
+
+            <form id="form_expert" width="100%">
+               <table width="100%" class="m" border="1">
+                  <tr>
+                     <td width="33%">Позивний</td>
+                     <td>
+                        <input class="advanced wh100" type="number" min="0" max="255"
+                           id="xfoxid" pattern="[0-9]" size="3" maxlength="3"
+                            />
+                  </tr>
+                  <tr>
+                     <td>К-ть лис</td>
+                     <td>
+                        <input class="advanced wh100" type="number" min="1" max="255"
+                           id="xnumfoxes" pattern="[0-9]" size="3" maxlength="3"
+                            />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Сеанс, с</td>
+                     <td>
+                        <input class="advanced wh100" type="number" min="1" max="255"
+                           id="xseancelen" pattern="[0-9]" size="3" maxlength="3"
+                           onkeyup="this.value = validateInt(this.value);"
+                           onblur="this.value = validateIntMinMax(this.value, 0, 255);"
+                            />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Швидк. маніп.</td>
+                     <td>
+                        <input class="advanced wh100" type="number" min="5" max="30"
+                           id="cwspeed" size="2" maxlength="2"
+                           onkeyup="this.value = validateInt(this.value);"
+                           onblur="this.value = validateIntMinMax(this.value, 5, 30);"
+                            />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Частота, кГц</td>
+                     <td>
+                        <input class="advanced wh100" type="number" min="3500" max="3755"
+                           id="xtxfreq" size="4" maxlength="4"
+                           onkeyup="this.value = validateInt(this.value);"
+                           onblur="this.value = validateIntMinMax(this.value, 3500, 3755);"
+                            />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Корр. тону, Гц</td>
+                     <td>
+                        <input class="advanced wh100" type="number" min="-500" max="500"
+                           id="tone" size="4" maxlength="4"
+                           onblur="this.value = validateIntMinMax(this.value, -500, 500);"
+                            />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>*Ємність акум., хв</td>
+                     <td>
+                        <input type="number" min="0" max="65535" id="accucap"
+                           class="advanced wh100" size="4" maxlength="4"
+                           onkeyup="this.value = validateInt(this.value);"
+                           onblur="this.value = validateIntMinMax(this.value, 0, 65535);"
+                            />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="3">
+                        <input type="button" class="wh100"
+                           onclick="submitFormXpert('/fox/cfg_savexpert');" value="Записати">
+                     </td>
+                  </tr>
+               </table>
+            </form>
+               <hr>
+               <div>
+                  <form action="wifi/wifi.html">
+                     <input type="submit" class="wh100" value="Налашт. WiFi">
+                  </form>
+               </div>
+               <hr>
+               <div>
+                  <form action="iant_adc.html">
+                     <input type="submit" class="wh100" value="Налашт. антени">
+                  </form>
+               </div>
+               <p style="font-size:30%;">*Для калібрування батареї запишіть у поле "Ємність акум., хв" значення 65535. Повністю зарядіть акумулятор, підключіть антену та запустіть передавач. Процес займає декілька годин до повної розрядки акумулятора. Після закінчення калібрування зарядіть акумулятор.</p>
+            </div>
+            <div id="view3">
+            <div><hr></div>
+               <table id="fox_info" width="100%" class="m" border="1">
+                  <tr>
+                     <td width="34%">Версія облад.:</td>
+                     <td><input id="hwver" class="wh100" disabled /></td>
+                  </tr>
+                  <tr>
+                     <td>Версія ПЗ:</td>
+                     <td><input id="swver" class="wh100" disabled /></td>
+                  </tr>
+                  <tr>
+                     <td>Рівень заряду:</td>
+                     <td><input id="clevel" class="wh100" disabled /></td>
+                  </tr>
+                  <tr>
+                     <td>Напрац., годин:</td>
+                     <td><input id="totaltime" class="wh100" disabled /></td>
+                  </tr>
+               </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

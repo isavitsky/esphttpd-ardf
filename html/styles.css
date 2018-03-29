@@ -1,0 +1,147 @@
+html {
+  margin:    0 auto;
+}
+
+#top {
+/*  max-width:960px;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.sgcell {
+  background-color:#282828;
+/*  background-color: rgba(0, 0, 0, 0.03);*/
+  box-shadow: 0 0 0 1px white;
+  overflow: hidden;
+  position: relative;
+}
+
+.sgcell6 {
+  flex-basis: 16.6666667%;
+}
+
+.sgcell:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.sgcontent {
+  left: 0;
+  position: absolute;
+  height: 100%;
+  top: 0;
+}
+
+.clearfix {
+    clear:both;
+}
+
+.sqtab {
+    table-layout:fixed;
+    width: 100%;
+    height:100%;
+/*    border-spacing: 0px;*/
+    border-spacing: 3px 3px;
+    border-collapse: collapse;
+}
+
+.sqtab td {
+/*    padding: 0px;*/
+    padding: 1px;
+}
+
+.cell0 {
+    height: 100%;
+    text-align:center;
+    vertical-align:middle;
+    font-size: 9.5vw;
+    font-weight:900;
+}
+
+.cell1 {
+    height: 66.66666667%;
+    text-align:center;
+    vertical-align:middle;
+    font-size:7.5vw;
+    font-weight:900;
+}
+
+.cell2 {
+    height: 33.333333%;
+    text-align: center;
+    vertical-align:middle;
+    font-size: 4vw;
+}
+
+.cell3 {
+    width:25%;
+    vertical-align: bottom;
+}
+
+.bat {
+    max-width:100%; 
+/*    display:block; 
+    height: auto;*/
+    vertical-align:middle;
+}
+
+.charge {
+    text-align: right;
+    font-size: 4vw;
+}
+
+/***************************************************************/
+.lnk {
+   text-decoration: none;
+}
+
+#bottom {
+    clear:both;
+    margin:0 1.66%;
+    width:89.68%;
+    padding: 3.5%;
+}
+
+#clock {
+   text-align:center;
+   font-size:75;
+   font-size:10vw;
+}
+
+table.m td
+{
+/*   height:150px; */
+   background-color:#fefcae;
+   font-size:80;
+   font-size:8vw;
+}
+
+select
+{
+   width:100%;
+   height:100%;
+/*   padding: 5px;*/
+   font-size:80;
+   font-size:7vw;
+   text-align:center;
+}
+
+input
+{
+   width: 100%;
+   height: 100%;
+   font-size:80;
+   font-size:7vw;
+   text-align:center;
+}
+
+img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:90%;
+}
+

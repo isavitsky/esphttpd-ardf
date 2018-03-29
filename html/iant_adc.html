@@ -1,0 +1,66 @@
+<html>
+<head>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="CONTENT-LANGUAGE" CONTENT="uk-UA">
+    <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-8">
+    <META HTTP-EQUIV="EXPIRES" CONTENT="Thu, 01 Jan 1970 00:00:00 GMT">
+
+	<link href="styles.css" rel="stylesheet" type="text/css" />
+	<link href="tabcontent.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="highcharts.js"></script>
+	<script type="text/javascript" src="scripts_adc.js"></script>
+</head>
+<body>
+	<div id="iant_adc" style="width:100%; height:50%;"></div>
+	<br>
+	<form>
+	<table class="m" width="100%">
+	    <tr>
+        	<td>
+		    <input type="button" class="wh100"
+                           onclick="requestIant();" value="Налаштувати">
+		</td>
+	    </tr>
+	</table>
+	</form>
+	<table class="m" width="100%">
+	    <tr>
+		<td width="24%">#max</td>
+		<td width="24%">
+		    <input id="smax" class="wh100" disabled>
+		</td>
+		<td width="24%">#last</td>
+		<td width="24%">
+		    <input id="slast" class="wh100" disabled>
+		</td>
+	    </tr>
+	    <tr>
+		<td width="24%">Vmax</td>
+		<td width="24%">
+		    <input id="vmax" class="wh100" disabled>
+		</td>
+		<td width="24%">Vm-Vl</td>
+		<td width="24%">
+		    <input id="vlast" class="wh100" disabled>
+		</td>
+	    </tr>
+	    <tr>
+		<td width="24%">#Corr</td>
+		<td width="24%">
+		    <input type="button" class="wh100"
+                           onclick="decCor();" value="-">
+		</td>
+		<td width="24%">
+		    <input id="corr" class="wh100" disabled>
+		</td>
+		<td width="24%">
+		    <input type="button" class="wh100"
+                           onclick="incCor();" value="&#65291;">
+		</td>
+	    </tr>
+	</table>
+</body>
+</body>
+</html>
+
